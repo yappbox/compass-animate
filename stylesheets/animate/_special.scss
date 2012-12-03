@@ -11,7 +11,9 @@
   $class      : $default-animation-class-mode,
   $keyframes  : $default-keyframes-output
 ) {
-  $sub      : compact($sub);
-  $hinge    : yepnope($sub, all hinge);
-  @if $hinge    { @include animate-hinge($class, $keyframes); }
+  $sub        : compact($sub);
+  $hinge      : yepnope($sub, all hinge);
+  $hingeRight : yepnope($sub, all hinge);
+  @if $hinge      { @include animate-hinge($class, $keyframes); }
+  @if $hingeRight { @include animate-hingeRight($class, $keyframes); }
 }
